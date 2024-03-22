@@ -1,5 +1,5 @@
 {
-    "name": "app/app",
+    "name": "composer/crud-rest",
     "autoload": {
         "psr-4": {
             "App\\": "backend/"
@@ -7,8 +7,8 @@
     },
     "authors": [
         {
-            "name": "faustinopsy",
-            "email": "rodrigohipnose@gmail.com"
+            "name": "vdanviel",
+            "email": "victordn.araujo@gmail.com"
         }
     ],
     "require": {}

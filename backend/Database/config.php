@@ -1,7 +1,7 @@
 <?php
 return [
     'database' => [
-        'driver' => 'sqlite', // 'pgsql', 'mysql', 'sqlite', 'sqlsrv' , 
+        'driver' => 'pgsql', // 'pgsql', 'mysql', 'sqlite', 'sqlsrv' , 
         'mysql' => [
             'host' => 'localhost',
             'db_name' => 'a01_teste',
@@ -21,9 +21,9 @@ return [
         ],
         'pgsql' => [
             'host' => 'localhost',
-            'db_name' => 'postgres',
-            'username' => 'root',
-            'password' => 'root123',
+            'db_name' => 'fatec',
+            'username' => 'postgres',
+            'password' => 'root',
             'port' => '5432', 
             'charset' => 'utf8'
         ],
