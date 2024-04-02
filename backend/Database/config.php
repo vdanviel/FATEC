@@ -4,9 +4,9 @@ return [
         'driver' => 'pgsql', // 'pgsql', 'mysql', 'sqlite', 'sqlsrv' , 
         'mysql' => [
             'host' => 'localhost',
-            'db_name' => 'a01_teste',
+            'db_name' => 'nome_do_seu_bd',
             'username' => 'root',
-            'password' => 'root123',
+            'password' => '',
             'charset' => 'utf8'
         ],
         'sqlite' => [
