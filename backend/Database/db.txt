@@ -1,5 +1,6 @@
+--PARA A TABELA PRODUTOS
 CREATE TABLE produtos (
-    id SERIAL PRIMARY KEY,
+    id bigint PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(255) NOT NULL,
     descricao TEXT,
     preco DECIMAL(10, 2) NOT NULL,
@@ -8,3 +9,20 @@ CREATE TABLE produtos (
     criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     atualizado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+--PARA A TABELA USUARIOS
+CREATE TABLE usuarios (
+    id bigint PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(50),
+    email VARCHAR(50),
+    password VARCHAR(20),
+    telefone VARCHAR(11),
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    atualizado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+--ADICIONAIS
+CREATE TRIGGER atualizar_data_atual
+BEFORE UPDATE ON usuarios
+FOR EACH ROW
+SET NEW.atualizado_em = CURRENT_TIMESTAMP;

@@ -1,10 +1,10 @@
 <?php
 return [
     'database' => [
-        'driver' => 'pgsql', // 'pgsql', 'mysql', 'sqlite', 'sqlsrv' , 
+        'driver' => 'mysql', // 'pgsql', 'mysql', 'sqlite', 'sqlsrv' , 
         'mysql' => [
             'host' => 'localhost',
-            'db_name' => 'nome_do_seu_bd',
+            'db_name' => 'fatec',
             'username' => 'root',
             'password' => '',
             'charset' => 'utf8'
