@@ -1,10 +1,10 @@
 --PARA A TABELA PRODUTOS
 CREATE TABLE produtos (
     id bigint PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(255) NOT NULL,
+    nome VARCHAR(255),
     descricao TEXT,
-    preco DECIMAL(10, 2) NOT NULL,
-    quantidade INT NOT NULL,
+    preco DECIMAL(10, 2),
+    quantidade INT,
     categoria VARCHAR(100),
     criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     atualizado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -21,7 +21,12 @@ CREATE TABLE users (
     atualizado TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
---ADICIONAIS
+--ADICIONAIS (OPCIONAL)
+CREATE TRIGGER atualizar_data_atual
+BEFORE UPDATE ON produtos
+FOR EACH ROW
+SET NEW.atualizado_em = CURRENT_TIMESTAMP;
+
 CREATE TRIGGER atualizar_data_atual
 BEFORE UPDATE ON users
 FOR EACH ROW
