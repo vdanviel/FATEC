@@ -16,11 +16,28 @@ class HttpHeader {
             header("Access-Control-Allow-Origin: " . self::$allowedOrigins[0]); 
         }
 
-        header("Content-Type: application/json; charset=UTF-8");
+        header("Content-Type: application/json;");
         header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
         header("Access-Control-Max-Age: 3600");
         header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-        header("Access-Control-Allow-Credentials: true"); 
+        header("Access-Control-Allow-Credentials: true");
+
+        $uri = rtrim($_SERVER['REQUEST_URI'], '/');
+
+        switch ($uri) {
+            case '/backend/router/produto':
+                header("X-Resource-Type: Produto");
+                break;
+
+            case '/backend/router/usuario':
+                header("X-Resource-Type: Usuario");
+                break;
+
+            default:
+                header("X-Resource-Type: None");
+                break;
+        }
+
     }
 
     public static function sendNotAllowedMethod() {

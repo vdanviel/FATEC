@@ -3,7 +3,6 @@ namespace App\Repository;
 
 use App\Database\Database;
 use App\Model\Produto;
-use PDO;
 
 class ProdutoRepository {
     private $conn;
@@ -48,7 +47,7 @@ class ProdutoRepository {
 
             $stmt->execute();
 
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
         } catch (\Throwable | \Exception | \PDOException $th) {
             
@@ -69,7 +68,7 @@ class ProdutoRepository {
 
             $stmt->execute();
 
-            return $stmt->fetch(PDO::FETCH_ASSOC);
+            return $stmt->fetch(\PDO::FETCH_ASSOC);
 
         } catch (\Throwable | \Exception | \PDOException $th) {
             

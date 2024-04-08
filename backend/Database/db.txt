@@ -15,7 +15,7 @@ CREATE TABLE users (
     id bigint PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(50),
     email VARCHAR(50),
-    senha VARCHAR(20),
+    senha MEDIUMTEXT,
     datanascimento VARCHAR(11),
     criado TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     atualizado TIMESTAMP DEFAULT CURRENT_TIMESTAMP

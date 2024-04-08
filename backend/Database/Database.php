@@ -62,11 +62,11 @@ class Database {
 
         } catch(PDOException $exception) {
 
-            echo "Erro de conexão: " . $exception;
+            echo "Erro de conexão" . $exception->getMessage();
 
         } catch(Exception $exception) {
 
-            echo "Erro de conexão (MongoDB): " . $exception;
+            echo "Erro de conexão (MongoDB): " . $exception->getMessage();
 
         }
 
