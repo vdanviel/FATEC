@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro de usuários</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/w3.css">
+    <link rel="stylesheet" href="../css/sweetalert2.min.css">
+    <body class="w3-container">
+        <div class="w3-display-middle w3-card-4">
+            <header class="w3-container w3-blue">
+              <a href="../index.html" class="w3-button w3-white w3-border w3-border-blue">Voltar</a>
+              </header>
+              <div class="w3-container w3-margin-right">
+
+                <form id="prodForm">
+
+                    <label for="nomeuser">Nome:</label><br>
+                    <input type="text" id="nomeuser" name="nomeuser" required><br>
+
+                    <label for="emailuser">Email:</label><br>
+                    <input type="text" id="emailuser" name="emailuser" required><br>
+
+                    <label for="senhauser">Senha:</label><br>
+                    <input type="password" id="senhauser" name="senhauser" required><br>
+
+                    <label for="nascimentouser">Nascimento:</label><br>
+                    <input type="date" formaction="dd/mm/yy" id="nascimentouser" name="nascimentouser" required><br>
+
+                    <button type="button" id="submitButton" class="w3-button w3-white w3-border w3-border-blue">Criar Usuário</button>
+                </form>
+
+                <footer class="w3-container w3-blue">
+                    
+                </footer>
+
+              </div>
+           
+    </div>
+    <script src="../js/sweetalert2.all.min.js"></script>
+    <script src="../js/user/createUser.js"></script>
+</body>
+</html>

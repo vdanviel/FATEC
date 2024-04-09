@@ -1,26 +1,25 @@
-function updateProd() {
-    const prodId = document.getElementById("getProdId").value;
-    const nomePro = document.getElementById("inputNome").value;
-    const precoPro = document.getElementById("inputPreco").value;
-    const quantidadePro = document.getElementById("inputQuantidade").value;
-    const descricaoPro = document.getElementById("inputDescricao").value;
-    const categoriaPro = document.getElementById("inputCategoria").value;
+function updateUser() {
+
+    const userId = document.getElementById("getUserId").value;
+    const nomeuser = document.getElementById("nomeuser").value;
+    const emailuser = document.getElementById("emailuser").value;
+    const senhauser = document.getElementById("senhauser").value;
+    const nascimentouser = document.getElementById("nascimentouser").value;
 
     const usuarioAtualizado = {
-        id: prodId,
-        nome: nomePro,
-        preco: precoPro,
-        quantidade: quantidadePro,
-        descricao: descricaoPro,
-        categoria: categoriaPro
+        id: userId,
+        nome: nomeuser,
+        email: emailuser,
+        senha: senhauser,
+        nascimento: nascimentouser
     };
 
-    if (!prodId) {
+    if (!userId) {
         Swal.fire('Por favor, insira um id!')
         return;
     }
 
-    fetch('http://localhost:8080/backend/router/produto', { 
+    fetch('http://localhost:8080/backend/router/usuario', { 
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'

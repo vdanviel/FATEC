@@ -1,15 +1,15 @@
-function deleteProd() {
-    const prodId = document.getElementById("getProdId").value;
+function deleteUser() {
+    const userId = document.getElementById("getUserId").value;
 
-    if (!prodId) {
+    if (!userId) {
         Swal.fire('Por favor, insira um id!')
         return;
     }
 
-    fetch('http://localhost:8080/backend/router/produto', {
+    fetch('http://localhost:8080/backend/router/usuario', {
         method: 'DELETE',
         body:JSON.stringify({
-            id: prodId
+            id: userId
         })
     })
     .then(response => {
@@ -27,13 +27,11 @@ function deleteProd() {
 
             Swal.fire('Excluido com sucesso!')
             
-            document.getElementById("getProdId").value = "";
-            document.getElementById("getProdId").value = "";
-            document.getElementById("inputNome").value = "";
-            document.getElementById("inputPreco").value = "";
-            document.getElementById("inputQuantidade").value = 0;
-            document.getElementById("inputDescricao").innerText = "";
-            document.getElementById("inputCategoria").options[0].selected = true;
+            document.getElementById("getUserId").value = "";
+            document.getElementById("nomeuser").value = "";
+            document.getElementById("emailuser").value = "";
+            document.getElementById("senhauser").value = "";
+            document.getElementById("nascimentouser").value = '';
             
         }   
         

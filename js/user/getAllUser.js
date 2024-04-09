@@ -1,6 +1,6 @@
 
 function getAll() {
-    fetch('http://localhost:8080/backend/router/produto', {
+    fetch('http://localhost:8080/backend/router/usuario', {
         method: 'GET'
     })
     .then(response => {
@@ -25,11 +25,11 @@ function displayUsers(data) {
 
     const list = document.createElement('ul');
     let listItem = document.createElement('tr');
-    listItem.textContent = `# - NOME - PREÇO - QUANTIDADE - CATEGORIA`;
+    listItem.textContent = `# - NOME - EMAIL - IDADE`;
     list.appendChild(listItem);
-    data.forEach(prod => {
+    data.forEach(user => {
         const listItem = document.createElement('li');
-        listItem.textContent = `${prod.id} - ${prod.nome} - ${prod.preco} - ${prod.quantidade}  - ${prod.categoria}`;
+        listItem.textContent = `${user.id} - ${user.nome} - ${user.email} - ${user.datanascimento}`;
         list.appendChild(listItem);
     });
 
