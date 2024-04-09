@@ -19,9 +19,9 @@ class UsuarioController {
         try {
 
             //validação
-            if (!isset($data['nome'], $data['email'], $data['senha'], $data['nascimento'])) {
+            if (!isset($data['nome'], $data['email'], $data['senha'], $data['nascimento']) || $data['nome'] == "" || $data['email'] == "" || $data['senha'] == "" || $data['nascimento'] == "") {
                 
-                http_response_code(400);
+                //http_response_code(400);
                 return json_encode(['error' => 'Preencha todos os campos.']);
 
             }

@@ -19,9 +19,9 @@ class ProdutoController {
         try {
 
             //validação
-            if (!isset($data['nome'], $data['descricao'], $data['preco'], $data['quantidade'], $data['categoria'])) {
+            if (!isset($data['nome'], $data['descricao'], $data['preco'], $data['quantidade'], $data['categoria']) || $data['nome'] == "" || $data['descricao'] == "" || $data['preco'] == "" || $data['quantidade'] == "" || $data['categoria'] == "") {
                 
-                http_response_code(400);
+                //http_response_code(400);
                 return json_encode(['error' => 'Preencha todos os campos.']);
 
             }
@@ -36,7 +36,7 @@ class ProdutoController {
 
             $create = $this->repository->cadastrar_produto($produto);
 
-            if (isset($create['error']) && $create['error'] == 'produto_existe') {
+            if (isset($create['error'])) {
                 
                 http_response_code(200);
                 echo json_encode($create);
