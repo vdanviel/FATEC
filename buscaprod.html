@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+    <title>Gerenciamento de Usuários</title>
+</head>
+<body class="w3-container">
+    <div class="w3-display-middle w3-card-4">
+        <header class="w3-container w3-blue">
+            <a href="../prova-web/index.html" class="w3-button w3-white w3-border w3-border-blue">Voltar</a>
+          </header>
+          <div class="w3-container w3-margin-right">
+            <h3>Buscar Produto</h3><br>
+            <label for="getProdId">ID do Produto:</label><br>
+            <input type="number" id="getProdId"><br>
+            <button class="w3-button w3-white w3-border w3-border-blue" onclick="getProd()">Buscar</button>
+
+            <h3>Gerenciar Usuário</h3>
+            <label for="inpuNome">Nome:</label><br>
+            <input type="text" id="inputNome"><br>
+
+            <label for="inpuPreco">Preco:</label><br>
+            <input type="text" id="inputPreco"><br>
+
+            <label for="inputQuantidade">Quantidade:</label><br>
+            <input type="text" id="inputQuantidade"><br>
+
+            <label for="inputDescricao">Descrição:</label><br>
+
+            <textarea class="form-control" id="inputDescricao"  style="resize: none;" required rows="5" placeholder="Digite a descrição..." name="desc"></textarea>
+            <br>
+
+            <label for="inputCategoria">Categoria:</label><br>
+            <select name="cate" id="inputCategoria" required>
+                <option>Selecione..</option>
+                <option value="alimentos">Alimentos</option>
+                <option value="eletronicos">Eletrônicos</option>
+                <option value="roupas">Roupas</option>
+                <option value="acessorios">Acessórios</option>
+            </select><br><br>
+
+            <button class="w3-button w3-white w3-border w3-border-blue" onclick="updateProd()">Atualizar</button>
+            <button class="w3-button w3-white w3-border w3-border-blue" onclick="deleteProd()">Excluir</button>
+        </div>
+    </div>
+<script src="js/sweetalert2.all.min.js"></script> 
+<script src="js/getProd.js"></script>
+<script src="js/updateProd.js"></script>
+<script src="js/deleteProd.js"></script>
+</body>
+</html>
