@@ -15,13 +15,26 @@ class ProdutoRepository {
 
         try {
             
-            $stmt = $this->conn->prepare("INSERT INTO produtos(nome,preco,descricao,categoria,quantidade) VALUES(:nome,:preco,:desc,:cate,:qnt)");
-
+            //recuperando dados definidos...
             $nome = $produto->get('nome');
             $preco = $produto->get('preco');
             $descricao = $produto->get('descricao');
             $categoria = $produto->get('categoria');
             $quantidade = $produto->get('quantidade');
+
+            //validando se porduto já existe..
+            $existe = $this->conn->prepare("SELECT * FROM produtos WHERE nome = :nome");
+
+            $existe->bindParam(':nome', $nome);
+
+            $existe->execute();
+
+            $produto = $existe->fetch(\PDO::FETCH_ASSOC);
+
+            if(is_array($produto)) return ['error' => 'produto_existe'];
+
+            $stmt = $this->conn->prepare("INSERT INTO produtos(nome,preco,descricao,categoria,quantidade) VALUES(:nome,:preco,:desc,:cate,:qnt)");
+
 
             $stmt->bindParam(':nome', $nome);
             $stmt->bindParam(':preco', $preco);

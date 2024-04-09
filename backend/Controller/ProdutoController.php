@@ -36,11 +36,11 @@ class ProdutoController {
 
             $create = $this->repository->cadastrar_produto($produto);
 
-            if (isset($create['error'])) {
-                return json_encode(['error' =>$create['error']]);
-            }
-
-            if ($create == true) {
+            if (isset($create['error']) && $create['error'] == 'produto_existe') {
+                
+                http_response_code(200);
+                echo json_encode($create);
+            }else if ($create == true) {
                 http_response_code(201);
                 return json_encode(['success' => 'Produto cadastrado com sucesso!']);
             }else {
@@ -105,7 +105,7 @@ class ProdutoController {
         try {
             //validação
             if (!isset($data['id'], $data['nome'], $data['descricao'], $data['preco'], $data['quantidade'], $data['categoria'])) {
-                http_response_code(400);
+                
                 return json_encode(['error' => 'Preencha todos os campos.']);
             }
     

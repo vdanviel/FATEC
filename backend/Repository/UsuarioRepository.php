@@ -15,12 +15,24 @@ class UsuarioRepository {
 
         try {
             
-            $stmt = $this->conn->prepare("INSERT INTO users(nome,email,senha,datanascimento) VALUES(:nome,:email,:senha,:nascimento)");
-
+            
             $nome = $usuario->get('nome');
             $email = $usuario->get('email');
             $senha = password_hash($usuario->get('senha'), PASSWORD_DEFAULT);
             $nascimento = $usuario->get('datanascimento');
+
+            //validando se porduto já existe..
+            $existe = $this->conn->prepare("SELECT * FROM users WHERE email = :email");
+
+            $existe->bindParam(':email', $email);
+
+            $existe->execute();
+
+            $usuario = $existe->fetch(\PDO::FETCH_ASSOC);
+
+            if(is_array($usuario)) return ['error' => 'usuario_existe'];
+
+            $stmt = $this->conn->prepare("INSERT INTO users(nome,email,senha,datanascimento) VALUES(:nome,:email,:senha,:nascimento)");
 
             $stmt->bindParam(':nome', $nome);
             $stmt->bindParam(':email', $email);
