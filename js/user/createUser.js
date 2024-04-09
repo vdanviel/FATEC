@@ -47,6 +47,9 @@ function createUser() {
             if (data.error == "usuario_existe") {
                 Swal.fire('Usuário já existe!')            
             }
+            
+            Swal.fire(data.error)
+
         }else{
             Swal.fire('Usuário criado!')
         }     

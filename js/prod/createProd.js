@@ -47,6 +47,7 @@ function createUser() {
             if (data.error == "produto_existe") {
                 Swal.fire('Produto já existe!')            
             }
+            Swal.fire(data.error)
         }else{
             Swal.fire('Produto criado!')
         }
