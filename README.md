@@ -8,6 +8,7 @@ Este projeto é um exemplo de aplicativo CRUD (Create, Read, Update, Delete) par
 Antes de utilizar este projeto, certifique-se de ter um servidor MySQL local em execução. Você precisará configurar as informações de conexão com o banco de dados no arquivo [FATEC/dw-2-crud-rest-v2/backend/Database/config.php](https://github.com/vdanviel/FATEC/tree/dw-2-crud-rest-v2). Certifique-se de que as configurações estejam corretas antes de prosseguir.
 
 ### Iniciar o Servidor da API
+Este projeto necessita da API [FATEC/dw-2-crud-rest-v2](https://github.com/vdanviel/FATEC/tree/dw-2-crud-rest-v2) em funcionamento. Baixe ela junto com este projeto separamente em sua máquina.
 É necessário iniciar o servidor da API. Recomenda-se iniciar nativamente pelo PHP com o comando:
 
 `php -S localhost:8080`
