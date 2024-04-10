@@ -3,52 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/w3.css">
-    <link rel="stylesheet" href="../css/sweetalert2.min.css">
     <title>Gerenciamento de Produtos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/sweetalert2.min.css">
 </head>
-<body class="w3-container">
-    <div class="w3-display-middle w3-card-4">
-        <header class="w3-container w3-blue">
-            <a href="../index.html" class="w3-button w3-white w3-border w3-border-blue">Voltar</a>
-          </header>
-          <div class="w3-container w3-margin-right">
-            <h3>Buscar Produto</h3><br>
-            <label for="getProdId">ID do Produto:</label><br>
-            <input type="number" id="getProdId"><br>
-            <button class="w3-button w3-white w3-border w3-border-blue" onclick="getProd()">Buscar</button>
-
-            <h3>Gerenciar Usuário</h3>
-            <label for="inpuNome">Nome:</label><br>
-            <input type="text" id="inputNome"><br>
-
-            <label for="inpuPreco">Preco:</label><br>
-            <input type="text" id="inputPreco"><br>
-
-            <label for="inputQuantidade">Quantidade:</label><br>
-            <input type="text" id="inputQuantidade"><br>
-
-            <label for="inputDescricao">Descrição:</label><br>
-
-            <textarea class="form-control" id="inputDescricao"  style="resize: none;" required rows="5" placeholder="Digite a descrição..." name="desc"></textarea>
-            <br>
-
-            <label for="inputCategoria">Categoria:</label><br>
-            <select name="cate" id="inputCategoria" required>
-                <option>Selecione..</option>
-                <option value="alimentos">Alimentos</option>
-                <option value="eletronicos">Eletrônicos</option>
-                <option value="roupas">Roupas</option>
-                <option value="acessorios">Acessórios</option>
-            </select><br><br>
-
-            <button class="w3-button w3-white w3-border w3-border-blue" onclick="updateProd()">Atualizar</button>
-            <button class="w3-button w3-white w3-border w3-border-blue" onclick="deleteProd()">Excluir</button>
+<body class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <a href="../index.html" class="btn btn-light border border-primary">Voltar</a>
+                    <h5 class="card-title d-inline-block ml-3">Buscar Produto</h5>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="getProdId">ID do Produto:</label>
+                        <input type="number" class="form-control" id="getProdId">
+                    </div>
+                    <button class="btn btn-primary" onclick="getProd()">Buscar</button>
+                </div>
+                <div class="card-header bg-primary text-white">
+                    <h5 class="card-title d-inline-block ml-3">Gerenciar Produto</h5>
+                </div>
+                <div class="card-body">
+                    <form id="updateDeleteProdForm">
+                        <div class="form-group">
+                            <label for="inputNome">Nome:</label>
+                            <input type="text" class="form-control" id="inputNome">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPreco">Preço:</label>
+                            <input type="text" class="form-control" id="inputPreco">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputQuantidade">Quantidade:</label>
+                            <input type="text" class="form-control" id="inputQuantidade">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputDescricao">Descrição:</label>
+                            <textarea class="form-control" id="inputDescricao" style="resize: none;" required rows="5" placeholder="Digite a descrição..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputCategoria">Categoria:</label>
+                            <select class="form-control" id="inputCategoria" required>
+                                <option>Selecione..</option>
+                                <option value="alimentos">Alimentos</option>
+                                <option value="eletronicos">Eletrônicos</option>
+                                <option value="roupas">Roupas</option>
+                                <option value="acessorios">Acessórios</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="updateProd()">Atualizar</button>
+                        <button type="button" class="btn btn-danger" onclick="deleteProd()">Excluir</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
-<script src="../js/sweetalert2.all.min.js"></script> 
-<script src="../js/prod/prod/getProd.js"></script>
-<script src="../js/prod/prod/updateProd.js"></script>
-<script src="../js/prod/prod/deleteProd.js"></script>
+    <script src="../js/sweetalert2.all.min.js"></script> 
+    <script src="../js/prod/prod/getProd.js"></script>
+    <script src="../js/prod/prod/updateProd.js"></script>
+    <script src="../js/prod/prod/deleteProd.js"></script>
 </body>
 </html>

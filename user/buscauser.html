@@ -3,43 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/w3.css">
-    <link rel="stylesheet" href="../css/sweetalert2.min.css">
     <title>Gerenciamento de Usuários</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-<body class="w3-container">
-    <div class="w3-display-middle w3-card-4">
-        <header class="w3-container w3-blue">
-            <a href="../index.html" class="w3-button w3-white w3-border w3-border-blue">Voltar</a>
-          </header>
-          <div class="w3-container w3-margin-right">
-            <h3>Buscar Usuário</h3><br>
-            <label for="getUserId">ID do Usuário:</label><br>
-            <input type="number" id="getUserId"><br>
-            <button class="w3-button w3-white w3-border w3-border-blue" onclick="getUser()">Buscar</button>
-
-            <h3>Gerenciar Usuário</h3>
-
-            <label for="nomeuser">Nome:</label><br>
-            <input type="text" id="nomeuser" name="nomeuser" required><br>
-
-            <label for="emailuser">Email:</label><br>
-            <input type="text" id="emailuser" name="emailuser" required><br>
-
-            <label for="senhauser">Senha:</label><br>
-            <input type="password" id="senhauser" name="senhauser" required><br>
-
-            <label for="nascimentouser">Nascimento:</label><br>
-            <input type="date" formaction="dd/mm/yy" id="nascimentouser" name="nascimentouser" required><br><br>
-
-
-            <button class="w3-button w3-white w3-border w3-border-blue" onclick="updateUser()">Atualizar</button>
-            <button class="w3-button w3-white w3-border w3-border-blue" onclick="deleteUser()">Excluir</button>
+<body class="container mt-5">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <a href="../index.html" class="btn btn-light border border-primary">Voltar</a>
+            <h5 class="card-title d-inline-block ml-3">Buscar Usuário</h5>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="getUserId">ID do Usuário:</label>
+                <input type="number" class="form-control" id="getUserId">
+            </div>
+            <button class="btn btn-primary" onclick="getUser()">Buscar</button>
+        </div>
+        <div class="card-header bg-primary text-white">
+            <h5 class="card-title d-inline-block ml-3">Gerenciar Usuário</h5>
+        </div>
+        <div class="card-body">
+            <form id="updateDeleteUserForm">
+                <div class="form-group">
+                    <label for="nomeuser">Nome:</label>
+                    <input type="text" class="form-control" id="nomeuser" name="nomeuser" required>
+                </div>
+                <div class="form-group">
+                    <label for="emailuser">Email:</label>
+                    <input type="email" class="form-control" id="emailuser" name="emailuser" required>
+                </div>
+                <div class="form-group">
+                    <label for="senhauser">Senha:</label>
+                    <input type="password" class="form-control" id="senhauser" name="senhauser" required>
+                </div>
+                <div class="form-group">
+                    <label for="nascimentouser">Nascimento:</label>
+                    <input type="date" class="form-control" id="nascimentouser" name="nascimentouser" required>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="updateUser()">Atualizar</button>
+                <button type="button" class="btn btn-danger" onclick="deleteUser()">Excluir</button>
+            </form>
         </div>
     </div>
-<script src="../js/sweetalert2.all.min.js"></script> 
-<script src="../js/user/getUser.js"></script>
-<script src="../js/user/updateUser.js"></script>
-<script src="../js/user/deleteUser.js"></script>
+    <script src="../js/sweetalert2.all.min.js"></script> 
+    <script src="../js/user/getUser.js"></script>
+    <script src="../js/user/updateUser.js"></script>
+    <script src="../js/user/deleteUser.js"></script>
 </body>
 </html>

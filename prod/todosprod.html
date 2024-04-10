@@ -4,20 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos</title>
-    <link rel="stylesheet" href="../css/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/sweetalert2.min.css">
 </head>
-<body class="w3-container">
-  <div class="w3-display-middle w3-card-4">
-    <header class="w3-container w3-blue">
-      <a href="../index.html" class="w3-button w3-white w3-border w3-border-blue">Voltar</a>
-    </header>
-    <div class="w3-container w3-margin-right">
-      <div id="proList"></div>
+<body class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <a href="../index.html" class="btn btn-light border border-primary">Voltar</a>
+                    <h5 class="card-title d-inline-block ml-3">Lista de Produtos</h5>
+                </div>
+                <div class="card-body">
+                    <div id="proList"></div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-
-  <script src="../js/sweetalert2.all.min.js"></script> 
-  <script src="../js/prod/getAllPro.js"></script> 
+    <script src="../js/sweetalert2.all.min.js"></script> 
+    <script src="../js/prod/getAllPro.js"></script> 
 </body>
 </html>
