@@ -9,6 +9,10 @@ Antes de utilizar este projeto, certifique-se de ter um servidor MySQL local em 
 
 ### Iniciar o Servidor da API
 Este projeto necessita da API [FATEC/dw-2-crud-rest-v2](https://github.com/vdanviel/FATEC/tree/dw-2-crud-rest-v2) em funcionamento. Baixe ela junto com este projeto separamente em sua máquina.
+Não esquece que essa API é um projeto em composer, então inicie o composer com:
+
+`composer init`
+
 É necessário iniciar o servidor da API. Recomenda-se iniciar nativamente pelo PHP com o comando:
 
 `php -S localhost:8080`
@@ -32,4 +36,3 @@ Este projeto foi desenvolvido como uma integração de uma API que está em outr
 
 ## Diagrama de Uso
 Diagrama de uso do projeto:
-![diagrama caso de uso](caso-de-uso-prova-dw-II.png)
