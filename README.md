@@ -20,8 +20,10 @@ Não esquece que essa API é um projeto em composer, então inicie o composer co
 Certifique-se de iniciar o servidor somente com a porta 8080, pois o projeto está configurado com essa porta.
 Também é importante lembrar que as tabelas em que o projeto se baseia está em [FATEC/dw-2-crud-rest-v2/backend/Database/db.txt](https://github.com/vdanviel/FATEC/tree/dw-2-crud-rest-v2), rode os SQL's necessários que estão nesse arquivo em banco de dados MYSQL.
 
+### Como funciona
+
 ### Requisições da Aplicação
-As requisições da aplicação são direcionadas para as pastas JavaScript respectivas. Quando um evento é acionado, são disparadas requisições para a API no endereço *http://localhost:8080/backend/router/(produto ou usuario)*. Cada verbo HTTP é utilizado da seguinte forma:
+As requisições da aplicação são direcionadas para as pastas JavaScript respectivas. Quando um evento é acionado, são disparadas requisições para a API no endereço `http://localhost:8080/backend/router/(produto ou usuario)`. Cada verbo HTTP é utilizado da seguinte forma:
 
 - GET: Usado para listar todos os itens (página "Listar Todos").
 - GET com uma query "id": Usado para listar um item específico no banco de dados (página "Buscar").
@@ -29,8 +31,7 @@ As requisições da aplicação são direcionadas para as pastas JavaScript resp
 - PUT: Usado para atualizar um item (dentro da página "Buscar", no formulário e no botão "Atualizar").
 - DELETE: Usado para deletar um item (página "Buscar", no botão "Deletar" depois de um item ser buscado).
 
-
-### Como funciona
+O front-end captura os dados do formulário utilizando JavaScript. Quando um formulário é preenchido e enviado, os dados são coletados utilizando métodos como `document.getElementById()` ou `document.querySelector()`, e em seguida, são formatados de acordo com a necessidade e enviados para o backend por meio de requisições HTTP.
 
 ### Cadastro
 - Ao selecionar a opção de cadastro, preencha os dados necessários e clique em "Cadastrar" para adicionar um novo item ao banco de dados.
@@ -41,8 +42,5 @@ As requisições da aplicação são direcionadas para as pastas JavaScript resp
 ### Buscar
 - Você pode buscar um item pelo seu campo de ID. Se o item existir, ele será automaticamente preenchido em um formulário adicional, onde você pode atualizá-lo ou excluí-lo.
 
-## Integração da API
-Este projeto foi desenvolvido como uma integração de uma API que está em outra branch do repositório [FATEC/dw-2-crud-rest-v2](https://github.com/vdanviel/FATEC/tree/dw-2-crud-rest-v2).
-
 ## Diagrama de Sequência
-Diagrama de uso do projeto:
+![diagrama de sequencia](diagrama-sequencia-prova-dw-II.png)
