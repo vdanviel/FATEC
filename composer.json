@@ -1,0 +1,16 @@
+{
+    "name": "alunos/alunos",
+    "autoload": {
+        "psr-4": {
+            "App\\Backend\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "vdanviel"
+        }
+    ],
+    "require": {
+        "firebase/php-jwt": "^6.10"
+    }
+}
