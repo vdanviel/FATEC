@@ -3,45 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <title>Document</title>
 </head>
-<style>
-    *{
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    .form-style{
-        display: flex;
-        flex-direction: column;
-        width: fit-content;
-    }
-    .form-style label{
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 10px;
-    }
-    .conteiner-center-x{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
-</style>
 <body>
-    <div class="conteiner-center-x">
-        <h1>Faça seu login</h1>
     
-        <form class="form-style" method="get">
-            <label for="email">
-                Email
-                <input type="text" name="email" id="email">
-            </label>
-            <label for="email">
-                Senha
-                <input type="text" name="email" id="email">
-            </label>
-            <input type="submit" value="Enviar">
-        </form>
-    
-    </div>
+    <div class="card">
+        <div class="card-content">
+          <div class="content">
+
+            <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                  <input class="input" type="email" id="email" placeholder="Email">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                  <span class="icon is-small is-right">
+                    <i class="fas fa-check"></i>
+                  </span>
+                </p>
+              </div>
+
+              <div class="field">
+                <p class="control has-icons-left">
+                  <input class="input" type="password" id="password" placeholder="Password">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                  </span>
+                </p>
+              </div>
+
+              <div class="field">
+                <p class="control">
+                  <button id="send" class="button is-success">
+                    Login
+                  </button>
+                </p>
+              </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <script src="js/login.js"></script>
+
 </body>
 </html>
