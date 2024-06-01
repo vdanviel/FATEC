@@ -28,22 +28,23 @@ async function renderize_deps(){
         row.append(email);
         row.append(part);
 
-        //preparando para clicar e redenrizar dep
-        row.style.cursor = 'pointer'//colocando pointer no mouse me cada linha
+        row.style.cursor = 'pointer';
 
-        row.addEventListener('click',() => {
-
-            window.location = ''
-
-        });
+        row.onclick = () => {
+          window.location = `/deputado/?id=${element.id}`
+        }
 
         table.append(row);
 
     });
 
     loading.remove();
+    return deps;
 
 }
 
-renderize_deps()
+document.addEventListener('DOMContentLoaded', async () => {
 
+  await renderize_deps()
+  
+})
