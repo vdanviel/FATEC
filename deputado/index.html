@@ -4,25 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script type="module" src="script.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script type="module" src="js/script.js"></script>
 </head>
 <body>
     
     <div class="login-page">
+
         <div class="form">
           <img src="midia/gray.png" alt="dep-imagem">
 
-          <h1>DEPUTADO</h1>
+          <h1>DEPUTADO:</h1>
           <form class="data-form">
           </form>
           
-          <form class="send-form">
-            <input type="text" placeholder="CEP" id="sender">
+          <div id="map"></div>
+          <small>Insira o código para a localização.</small>
+
+          <form onsubmit="handle(event)" class="send-form">
+
+            <input type="text" onblur="fullfil_address(this.value)" placeholder="CEP" id="address_code">
+
+            <div class="address-form">
+              <label for="street">Rua
+                <input id="street" type="text">
+              </label>
+              <label for="neighborhood">Bairro
+                <input id="neighborhood" type="text">
+              </label>
+              <label for="city">Cidade
+                <input id="city" type="text">
+              </label>
+              <label for="state">Estado
+                <input id="state" type="text">
+              </label>
+              <label for="lat">Latitude
+                <input id="lat" type="text">
+              </label>
+              <label for="lon">Longitude
+                <input id="lon" type="text">
+              </label>
+            </div>
+
             <input type="submit" value="Enviar">
           </form>
 
         </div>
+
     </div>
 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="js/leaflet.js"></script>
 </body>
 </html>
