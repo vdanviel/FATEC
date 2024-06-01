@@ -1,5 +1,5 @@
 
-var map = L.map('map').setView([-15.7801, -47.9292], 4);
+var map = L.map('map').setView([-15.7801, -47.9292], 10);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -49,12 +49,14 @@ async function fullfil_address(code) {
 
                     //mostrando no mapa
                     if (typeof info == 'object') {
-                    
-                        L.marker([info[0].lat, info[0].lon], 13).addTo(map);
+
+                        map.setView([info[0].lat, info[0].lon], 35, {animated: true});
+                        L.marker([info[0].lat, info[0].lon]).addTo(map);
 
                     }else{
 
-                        L.marker([info.lat, info.lon], 13).addTo(map);
+                        map.setView([info.lat, info.lon], 35, {animated: true});
+                        L.marker([info.lat, info.lon]).addTo(map);
 
                     }
 
