@@ -6,45 +6,28 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+//envia para o back
 function handle(e) {
     e.preventDefault();
 
 
 }
 
-function find_loc() {
-        
-
+//da display no mapa e retorna lat e lon
+function find_loc(address, city, state) {
 
     //mostrando no mapa
-    var address = `${data.logradouro},${data.bairro},${data.localidade},${data.uf},Brazil`;
+    var address_info = `?format=json&street=${address}&city=${city}&state=${state}&country=Brazil`;
 
-    fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address)}`)
-    .then(response => response.json())
-    .then(locations => {
+    const response = fetch(`https://nominatim.openstreetmap.org/search${address_info}`).then(data => data.json());
 
-        console.log(locations);
+    return response;
 
-        if (locations.length > 0) {
-            var location = locations[0];
-            var lat = location.lat;
-            var lon = location.lon;
-
-            
-            map.setView([lat, lon], 16);
-            L.marker([lat, lon]).addTo(map).bindPopup(`Local encontrado.`).openPopup();
-
-            
-
-        } else {
-
-
-            alert("Localização não encontrada.");
-        }
-    });
+    
 }
 
-function fullfil_address(code) {
+//preenche formulario
+async function fullfil_address(code) {
 
     //recu
     fetch(`https://viacep.com.br/ws/${code}/json/`)
@@ -54,13 +37,28 @@ function fullfil_address(code) {
             if (!data.erro) {
                 
                 //preenchendo os campos
-                let street = document.getElementById('street');
-                let neighborhood = document.getElementById('neighborhood');
-                let city = document.getElementById('city');
-                let state = document.getElementById('state');
-                let lat = document.getElementById('lat');
-                let lon = document.getElementById('lon');
+                document.getElementById('street').value = data.logradouro;
+                document.getElementById('neighborhood').value = data.bairro;
+                document.getElementById('city').value = data.localidade;
+                document.getElementById('state').value = data.uf;
 
+                
+                find_loc(data.logradouro, data.localidade, data.uf).then((info) => {
+
+                    console.log(info);
+
+                    //mostrando no mapa
+                    if (typeof info == 'object') {
+                    
+                        L.marker([info[0].lat, info[0].lon], 13).addTo(map);
+
+                    }else{
+
+                        L.marker([info.lat, info.lon], 13).addTo(map);
+
+                    }
+
+                });
 
                 
 
@@ -71,5 +69,3 @@ function fullfil_address(code) {
         })
         .catch(error => console.error('Erro ao buscar o CEP:', error));
 }
-
-functi

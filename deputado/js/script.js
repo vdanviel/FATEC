@@ -28,9 +28,7 @@ const render_page = async () => {
     general.createFieldInput('document','CPF', data.dados.cpf,'text',form);//cpf
     general.createFieldInput('sex','Gênero', data.dados.sexo,'text',form);//sex
     general.createFieldInput('birth','Aniversário', data.dados.dataNascimento,'text',form);//birth
-    general.createFieldInput('state','Estado', data.dados.ufNascimento,'text',form);//estado
     general.createFieldInput('education','Educação', data.dados.escolaridade,'text',form);//education
-    general.createFieldInput('neighborhood','Município', data.dados.municipioNascimento,'text',form);//municipio
     general.createFieldInput('death','Falecimento', data.dados.dataFalecimento,'text',form);//falecimento
     general.createFieldInput('acronym','Sigla', data.dados.ultimoStatus.siglaPartido,'text',form);//sigla
 
