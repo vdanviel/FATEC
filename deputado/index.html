@@ -23,30 +23,32 @@
 
           <form onsubmit="handle(event)" class="send-form">
 
-            <input type="text" onblur="fullfil_address(this.value)" placeholder="CEP" id="address_code">
+            <input type="text" onblur="fullfil_address(this.value)" placeholder="CEP*" id="address_code">
 
             <div class="address-form">
-              <label for="street">Rua
+              <label for="street">Rua*
                 <input id="street" type="text">
               </label>
-              <label for="neighborhood">Bairro
+              <label for="neighborhood">Bairro*
                 <input id="neighborhood" type="text">
               </label>
-              <label for="city">Cidade
+              <label for="city">Cidade*
                 <input id="city" type="text">
               </label>
-              <label for="state">Estado
+              <label for="state">Estado*
                 <input id="state" type="text">
               </label>
-              <label for="lat">Latitude
+              <label for="lat">Latitude*
                 <input id="lat" type="text">
               </label>
-              <label for="lon">Longitude
+              <label for="lon">Longitude*
                 <input id="lon" type="text">
               </label>
             </div>
 
+            <small>Os dados marcados com * são obrigatórios.</small>
             <input type="submit" value="Enviar">
+            
           </form>
 
         </div>
@@ -54,6 +56,6 @@
     </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    <script src="js/leaflet.js"></script>
+    <script src="js/services.js"></script>
 </body>
 </html>
