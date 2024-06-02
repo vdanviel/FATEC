@@ -15,14 +15,6 @@ async function renderize_deps(){
         let row = document.createElement('tr');//criando linha
         let id = document.createElement('td');
 
-        let img = document.createElement('img')
-        img.src = element.urlFoto;
-        img.width = '50';
-
-        let imgrow = document.createElement('td');
-
-        imgrow.append(img);
-
         let name = document.createElement('td');
         let email = document.createElement('td');
         let part = document.createElement('td');
@@ -33,7 +25,6 @@ async function renderize_deps(){
         part.innerText = element.siglaPartido;
 
         row.append(id);
-        row.append(imgrow)
         row.append(name);
         row.append(email);
         row.append(part);
