@@ -1,13 +1,12 @@
-import { api } from "../requests/handle.js";
+import { api } from "../requests/deputies.js";
 
 async function renderize_deps(){
 
     let deps = await api.dep.all();
-    let table = document.querySelector('.simple-table tbody');
 
     let loading = document.createElement('p');
     loading.innerText = 'Carregando...'
-    table.append(loading);
+    document.body.append(loading);
 
     //montando no front
     deps.dados.forEach(element => {

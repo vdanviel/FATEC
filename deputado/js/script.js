@@ -1,4 +1,4 @@
-import { api } from "../../requests/handle.js";
+import { api } from "../../requests/deputies.js";
 import { general } from "../../general.js";
 
 document.addEventListener('DOMContentLoaded', async () => {
