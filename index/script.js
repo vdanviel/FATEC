@@ -1,4 +1,5 @@
 import { api } from "../requests/handle.js";
+import { info } from "../system_info.js";
 
 async function renderize_deps(){
 
@@ -41,7 +42,7 @@ async function renderize_deps(){
         row.style.cursor = 'pointer';
 
         row.onclick = () => {
-          window.location = `FATEC/deputado/?id=${element.id}`
+          window.location = `${info.url.prod}/deputado/?id=${element.id}`
         }
 
         table.append(row);

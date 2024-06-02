@@ -1,3 +1,5 @@
+import { info } from "../../system_info";
+
 //da display do mapa
 var map = L.map('map').setView([-15.7801, -47.9292], 10);
 
@@ -58,7 +60,7 @@ function handle(e) {
                 
                 alert("Dados enviados com sucesso!");
     
-                window.location.href = '/FATEC/';
+                window.location = info.url.prod
     
             }
         })
