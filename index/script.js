@@ -41,7 +41,7 @@ async function renderize_deps(){
         row.style.cursor = 'pointer';
 
         row.onclick = () => {
-          window.location = `/deputado/?id=${element.id}`
+          window.location = `FATEC/deputado/?id=${element.id}`
         }
 
         table.append(row);

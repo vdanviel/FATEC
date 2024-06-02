@@ -58,7 +58,7 @@ function handle(e) {
                 
                 alert("Dados enviados com sucesso!");
     
-                window.location.href = '/';
+                window.location.href = '/FATEC/';
     
             }
         })
