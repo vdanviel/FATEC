@@ -4,8 +4,10 @@ async function renderize_deps(){
 
     let deps = await api.dep.all();
 
+    let table = document.querySelector('.simple-table tbody');
+
     let loading = document.createElement('p');
-    loading.innerText = 'Carregando...'
+    loading.innerText = 'Carregando...';
     document.body.append(loading);
 
     //montando no front
