@@ -23,7 +23,7 @@ function handle(e) {
     let neighborhood = document.getElementById('neighborhood').value;
     let street = document.getElementById('street').value;
     let lat = document.getElementById('lat').value;
-    let lon = document.getElementById('street').value;
+    let lon = document.getElementById('lon').value;
 
     if (name.length == 0 || sex.length == 0 ||acronym.length == 0 ||email.length == 0 ||address_code.length == 0 ||city.length == 0 ||neighborhood.length == 0 ||street.length == 0 ||lat.length == 0 ||lon.length == 0) {
 
@@ -107,6 +107,9 @@ async function fullfil_address(code) {
 
                 try {
                     
+                    document.getElementById('lat').value = 'Carregando...';
+                    document.getElementById('lon').value = 'Carreagando...';
+
                     loc_finder.then((info) => {
 
                         //mostrando no mapa
