@@ -77,7 +77,7 @@ Esse objeto é responsável por lidar com a parte de de requisições em relaç�
             row.style.cursor = 'pointer';
 
             row.onclick = () => {
-                window.location = `https://vdanviel.github.io/FATEC/deputado/?id=${element.id}`
+                window.location = 'https://vdanviel.github.io/FATEC/deputado/?id=${element.id}'
             }
 
             table.append(row);
@@ -169,7 +169,7 @@ Este trecho **renderiza o mapa do [Leaflet.js](https://leafletjs.com/index.html)
     async function fullfil_address(code) {
 
         //recuperar informações e colocar no formulario
-        fetch(`https://viacep.com.br/ws/${code}/json/`)
+        fetch('https://viacep.com.br/ws/${code}/json/')
         .then(response => response.json())
         .then(data => {
 

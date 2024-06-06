@@ -1,3 +1,4 @@
+import { info } from "../../system.js";
 
 //da display do mapa
 var map = L.map('map').setView([-15.7801, -47.9292], 10);
